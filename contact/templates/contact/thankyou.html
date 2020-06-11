@@ -1,0 +1,25 @@
+{% load static %}
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'contact/css/thankyou.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Source+Sans+Pro" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+     <div class=content>
+         <div class="wrapper-1">
+             <div class="wrapper-2">
+                 <h1>Thank you !</h1>
+                 <p>Thanks for subscribing to our news letter. </p>
+                 <p>you should receive a confirmation email soon </p>
+                 <a href="{% url 'home' %}">
+                    <button class="go-home">
+                        Explore More!!
+                    </button>
+                </a>
+                 
+             </div>
+         </div>
+     </div>
+
+{% endblock %}

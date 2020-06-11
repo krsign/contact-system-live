@@ -1,0 +1,7 @@
+*.pyc
+*~
+/.vscode
+__pycache__
+django2point2
+db.sqlite3
+/static

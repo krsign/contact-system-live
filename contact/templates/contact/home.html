@@ -1,0 +1,38 @@
+{% extends 'contact/base.html' %}
+
+{% load static %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{static 'contact/css/home.css'}">
+{% endblock %}
+
+{% block content %}
+    
+    <div class="container">
+    
+        <ul class="blog-post columns-">
+            {% for p in contacts reversed  %}
+                <li>
+                {% if p.image %}
+                    <img class=" p-img" src="{{p.image.url}}" alt="">
+                {% else %}
+                    <img src="https://edyoda.s3.amazonaws.com/media/blog-images/devops_tJSKVcn.jpg" />
+                {% endif %}
+
+                <h5>{{p.name}}</h5>
+                <h5>{{p.email}}</h5>
+                <h5>{{p.phone}}</h5>
+                <hr>
+                <a href="{% url 'update' p.id %}">
+                    <button type="button" class="btn btn-warning">Update</button>
+                </a>
+                <a href="{% url 'delete' p.id %}">
+                    <button type="button" class="btn btn-danger">Delete</button>
+                </a>
+                
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+{% endblock %}

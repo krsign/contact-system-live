@@ -1,0 +1,23 @@
+{% extends 'contact/base.html' %}
+{% load static %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'contact/css/contact-us.css' %}">
+    <script src="{% static 'contact/js/contact-us.js' %}"></script>
+{% endblock extra_head %}
+
+{% block content %}
+     <div id="form">
+        {% csrf_token %}
+        <div class="fish" id="fish"></div>
+        <div class="fish" id="fish2"></div>
+
+        <form id="waterform" method="post">
+            <h2>Contact Us!!!</h2>
+             {% csrf_token %}
+             {{ form.as_p }}
+             <input type="submit" value="submit">
+        </form>
+    </div>
+  
+{% endblock %}
